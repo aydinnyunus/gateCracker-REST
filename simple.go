@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	_ "github.com/gin-gonic/gin"
 )
 
 type smartLock struct {
