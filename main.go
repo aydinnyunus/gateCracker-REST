@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"strconv"
@@ -143,8 +142,8 @@ func changeSmartLock(c *gin.Context) {
 func deleteSmartLocks(c *gin.Context) {
 	ID := c.Param("ID")
 	intVar, _ := strconv.Atoi(ID)
-	fmt.Println(smartLocks)
+	//fmt.Println(smartLocks)
 	smartLocks = RemoveIndex(smartLocks, intVar-1)
-	fmt.Print(smartLocks)
+	//fmt.Print(smartLocks)
 	c.IndentedJSON(http.StatusOK, smartLocks[intVar-1])
 }
