@@ -61,13 +61,9 @@ func main() {
 
 	router := gin.Default()
 
-	authorized := router.Group("/", gin.BasicAuth(gin.Accounts{
-		"sockpuppets": "112358yunus.",
-	}))
-
 	router.GET("/smartLocks", getSmartLocks)
 	router.GET("/smartLocks/:ID", getSmartLockByID)
-	authorized.POST("/smartLocks", postSmartLocks)
+	router.POST("/smartLocks", postSmartLocks)
 	router.PUT("/smartLocks/:ID", changeSmartLock)
 	router.DELETE("/smartLocks/:ID", deleteSmartLocks)
 
