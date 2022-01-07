@@ -71,6 +71,7 @@ func main() {
 
     router.GET("/smartLocks", getSmartLocks)
     router.GET("/smartLocks/:ID", getSmartLockByID)
+    router.POST("/smartLocks", postSmartLocks)
 
     router.Run()
 }
@@ -78,6 +79,21 @@ func main() {
 // getSmartLocks responds with the list of all smartLocks as JSON.
 func getSmartLocks(c *gin.Context) {
     c.IndentedJSON(http.StatusOK, smartLocks)
+}
+
+// postSmartLocks adds an smartLock from JSON received in the request body.
+func postSmartLocks(c *gin.Context) {
+    var newsmartLock smartLock
+
+    // Call BindJSON to bind the received JSON to
+    // newsmartLock.
+    if err := c.BindJSON(&newsmartLock); err != nil {
+        return
+    }
+
+    // Add the new smartLock to the slice.
+    smartLocks = append(smartLocks, newsmartLock)
+    c.IndentedJSON(http.StatusCreated, newsmartLock)
 }
 
 // postSmartLocks adds an smartLock from JSON received in the request body.
