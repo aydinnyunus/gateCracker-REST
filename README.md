@@ -28,7 +28,7 @@ go run main.go
 ```
 ## Demo
 
-https://share.streamlit.io/actuallytest/test2/main/main.py
+https://share.streamlit.io/aydinnyunus/gatecracker/main/main.py
 
 ![github-small](https://github.com/aydinnyunus/gateCracker/blob/main/images/website.png?raw=true)
 ## API
