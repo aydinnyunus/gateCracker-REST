@@ -1,55 +1,61 @@
-# Go Lock Models REST API Example
-A RESTful API example for simple lock model information application with Go
+# GateCracker REST API
 
-It is a just simple tutorial or example for making simple RESTful API.
+A RESTful API for gateCracker tool that provides default password information for Smart Locks in Turkey.
+
+This API is required to run the [gateCracker](https://github.com/aydinnyunus/gateCracker) tool. The gateCracker application connects to this REST API running on `localhost:8080` to retrieve lock model information and default passwords.
 
 ## Installation & Run
-```bash
-# Download this project
-go get github.com/aydinnyunus/gateCracker-REST/
-```
-
 
 ```bash
-# Build and Run
+# Clone the repository
+git clone https://github.com/aydinnyunus/gateCracker-REST.git
+
+# Navigate to the directory
 cd gateCracker-REST
-go mod tidy
-go run main.go
 
-# API Endpoint : http://127.0.0.1:8080
+# Install dependencies
+go mod tidy
+
+# Run the API server
+go run main.go
 ```
+
+The API will be available at `http://localhost:8080`
 
 ## Structure
+
 ```
 ├── go.mod
 ├── go.sum  
 ├── simple.go
 └── main.go
 ```
-## Demo
 
-https://share.streamlit.io/aydinnyunus/gatecracker/main/main.py
+## API Endpoints
 
-![github-small](https://github.com/aydinnyunus/gateCracker/blob/main/images/website.png?raw=true)
-## API
+### GET /smartLocks
+Get all smart locks
 
-#### /smartLocks
-* `GET` : Get all smartLocks
+### GET /smartLocks/:id
+Get a specific smart lock by ID
 
-#### /smartLocks/:id
-* `GET` : Get a smartLock
+Example: `GET http://localhost:8080/smartLocks/1`
 
-## Bug / Feature Request :man_technologist:
-If you find a bug (the application couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/aydinnyunus/gateCracker-REST/issues/new) by including your search query and the expected result.
+## Usage with gateCracker
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/aydinnyunus/gateCracker-REST/issues/new). Please include sample queries and their corresponding results.
-
-It is my first application with GUI.Thank you !.
+1. Start this REST API server: `go run main.go`
+2. Make sure the API is running on `http://localhost:8080`
+3. Run the [gateCracker](https://github.com/aydinnyunus/gateCracker) tool which will connect to this API
 
 ## Blog Post
 
-https://sockpuppets.medium.com/bypassing-door-passwords-4004b8d7995
+- Medium: https://sockpuppets.medium.com/bypassing-door-passwords-4004b8d7995
+- GitHub Pages: https://aydinnyunus.github.io/2022/01/07/bypassing-door-passwords/
+
+## Bug / Feature Request 👨‍💻
+
+If you find a bug or would like to request a new feature, please open an issue [here](https://github.com/aydinnyunus/gateCracker-REST/issues/new).
 
 ## Connect with me! 🌐
 
-[<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/linkedin.png" title="LinkedIn">](https://linkedin.com/in/yunus-ayd%C4%B1n-b9b01a18a/)       [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/github.png" title="Github">](https://github.com/aydinnyunus/gateCracker-REST)     [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" title="Instagram">](https://instagram.com/aydinyunus_/) [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/twitter.png" title="LinkedIn">](https://twitter.com/aydinnyunuss)
+[<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/linkedin.png" title="LinkedIn">](https://linkedin.com/in/yunus-ayd%C4%B1n-b9b01a18a/)       [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/github.png" title="Github">](https://github.com/aydinnyunus)     [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" title="Instagram">](https://instagram.com/aydinyunus_/) [<img target="_blank" src="https://img.icons8.com/bubbles/100/000000/twitter.png" title="Twitter">](https://twitter.com/aydinnyunuss)
