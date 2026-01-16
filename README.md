@@ -4,6 +4,8 @@ A RESTful API for gateCracker tool that provides default password information fo
 
 This API is required to run the [gateCracker](https://github.com/aydinnyunus/gateCracker) tool. The gateCracker application connects to this REST API running on `localhost:8080` to retrieve lock model information and default passwords.
 
+**Blog Post**: https://aydinnyunus.github.io/2022/01/07/bypassing-door-passwords/
+
 ## Installation & Run
 
 ```bash
